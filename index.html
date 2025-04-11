@@ -153,8 +153,11 @@
         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1rem;
-            padding: 2rem;
+            gap: 2rem;
+            padding: 4rem;
+            align-items: center;
+            align-content: center;
+            padding-right: 20%;
         }
 
         .project-card {
@@ -165,6 +168,9 @@
             transition: 0.3s;
             position: relative;
             text-align: center;
+            align-items: center;
+            align-content: center;
+            
         }
 
         .project-card:hover {
@@ -207,6 +213,7 @@
             .profile-header {
                 flex-direction: column;
                 gap: 2rem;
+                padding-top: 10%;
             }
 
             .profile-img {
@@ -223,6 +230,11 @@
         .name{
             background-color: rgba(12, 139, 148, 0.589);
             border-radius: 10px;
+        }
+        #experience{
+            align-content: center;
+            align-items: center;
+            text-align: center;
         }
     </style>
 </head>
