@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الدكتور ريان الشنقيطي - طالب طب أسنان</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --earth: #2C5F2D;
+            --moss: #4CAF50;
+            --clay: #FF5722;
+            --sand: #FFF8E1;
+            --water: #2196F3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans Arabic', sans-serif;
+        }
+
+        body {
+            background: var(--sand);
+            color: var(--earth);
+            overflow-x: hidden;
+        }
+
+        /* Organic Shapes */
+        .nature-shape {
+            position: fixed;
+            width: 80vw;
+            height: 80vh;
+            background: var(--moss);
+            border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+            opacity: 0.1;
+            z-index: -1;
+            animation: morph 20s infinite;
+        }
+
+        @keyframes morph {
+            0%, 100% { border-radius: 60% 40% 30% 70%/60% 30% 70% 40%; }
+            50% { border-radius: 30% 60% 70% 40%/50% 60% 30% 60%; }
+        }
+        /* Experience Timeline */
+        .organic-timeline {
+            position: relative;
+            padding-left: 3rem;
+            margin-left: 2rem;
+        }
+
+        .organic-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--earth);
+            border-radius: 2px;
+        }
+
+        .timeline-node {
+            position: relative;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .timeline-node::before {
+            content: '';
+            position: absolute;
+            left: -3.5rem;
+            top: 2rem;
+            width: 20px;
+            height: 20px;
+            background: var(--clay);
+            border-radius: 50%;
+        }
+
+        /* Sticky Navigation */
+        .organic-nav {
+            position: fixed;
+            top: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 2rem;
+            padding: 1rem 2rem;
+            background: rgba(255,255,255,0.9);
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .organic-nav a {
+            text-decoration: none;
+            color: var(--earth);
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .organic-nav a:hover {
+            color: var(--clay);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 10%;
+            gap: 4rem;
+            flex-direction: column;
+            margin-top: 10%;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .profile-img {
+            width: 300px;
+            height: 300px;
+            border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
+            object-fit: cover;
+            border: 5px solid var(--clay);
+            animation: float 6s infinite;
+        }
+
+        .university-logo {
+            width: 200px;
+            height: auto;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
+            border-radius: 20px;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Clinical Experience */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            padding: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            width: 60%;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: 0.3s;
+            position: relative;
+            text-align: center;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .project-image {
+            height: 250px;
+            background-size:contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .project-info {
+            padding: 1.5rem;
+        }
+
+        /* Contact Section */
+        .contact-wrapper {
+            background: white;
+            border-radius: 30px;
+            padding: 4rem;
+            margin: 4rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .qr-code {
+            width: 200px;
+            height: 200px;
+            border: 3px solid var(--clay);
+            border-radius: 20px;
+            padding: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .profile-header {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .profile-img {
+                width: 250px;
+                height: 250px;
+            }
+
+            .contact-wrapper {
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
+            }
+        }
+        .name{
+            background-color: rgba(12, 139, 148, 0.589);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="nature-shape"></div>
+
+    <nav class="organic-nav">
+        <a href="#home">الرئيسية</a>
+        <a href="#about">عن الدكتور</a>
+        <a href="#experience">الخبرات</a>
+        <a href="#contact">التواصل</a>
+    </nav>
+
+    <section class="hero-section" id="home">
+        <div class="profile-header">
+            <img src="rayan.jpg" alt="الدكتور ريان" class="profile-img">
+            <img src="uqu2.jpg" alt="شعار الجامعة" class="university-logo">
+        </div>
+        <h1 class="name">الدكتور. ريان الشنقيطي</h1>
+        <p>طالب سنة خامسة - طب وجراحة الفم والأسنان</p>
+    </section>
+
+    <section id="about" class="section">
+        <div class="organic-timeline">
+            <div class="timeline-node">
+                <h3>المؤهلات الأكاديمية</h3>
+                <p>طالب سنة خامسة بكلية طب الأسنان</p>
+                <p>جامعة أم القرى - مكة المكرمة</p>
+            </div>
+            <div class="timeline-node">
+                <h3>نبذة عن الدكتور</h3>
+                <p>الدكتور ريان الشنقيطي هو طبيب أسنان متميز يتمتع بخبرة واسعة وشغف حقيقي في مجال طب الأسنان. عُرف بإخلاصه في العمل واهتمامه الكبير براحة مرضاه، حيث ساعد العديد من الحالات الصعبة على التعافي واستعادة ابتسامتهم بثقة.</p>
+                
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2 class="section-title">بعض الحالات السابقة</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <div class="project-image" style="background-image: url('c.jpg')"></div>
+                <div class="project-info">
+                    <h3>طقم أسنان كامل</h3>
+                    <p>استخدام أحدث التقنيات في تركيب وتنسيق طقم الأسنان</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image" style="background-image: url('d.jpg')"></div>
+                <div class="project-info">
+                    <h3>ترميم أسنان وعلاج تسوس</h3>
+                    <p>حالة ناجحة لترميم اسنان وعلاج التسوس</p>
+                </div>
+            </div>
+        
+        <div class="project-card">
+            <div class="project-image" style="background-image: url('b1.jpg')"></div>
+            <div class="project-info">
+                <h3>علاج عصب قبل</h3>
+                <p>علاج عصب وهنا يظهر العصب المصاب قبل العلاج</p>
+            </div>
+        </div>
+    
+    <div class="project-card">
+        <div class="project-image" style="background-image: url('b2.jpg')"></div>
+        <div class="project-info">
+            <h3>علاج عصب بعد</h3>
+            <p>نهاية علاج العصب بنجاح</p>
+        </div>
+    </div>
+</div>
+    </section>
+
+    <section id="contact" class="contact-wrapper">
+        <div>
+            <h2>معلومات التواصل</h2>
+            <p>البريد الإلكتروني: rayan5479999@gmail.com</p>
+            <p>الهاتف: +966 56 744 1785</p>
+            <p>الموقع: مكة المكرمة</p>
+        </div>
+        <div>
+            <h3>تواصل عبر واتساب</h3>
+            <img src="qr.jpg" alt="رمز الواتساب" class="qr-code">
+        </div>
+    </section>
+
+    <script>
+        // Scroll Animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        document.querySelectorAll('.section').forEach((section) => {
+            section.style.opacity = 0;
+            section.style.transform = 'translateY(50px)';
+            section.style.transition = '1s';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
